@@ -1,2 +1,16 @@
-# Processing-rookie
-This is for my draft processing or p5 sketches ( by the way, I'm just starting so you won't see anything extra ordinairy...)
+# Processing rookie
+
+This repository doesn't content very big sketches and stuff,
+I'm just a beginer or beginner, I'm not sure... but yeah, if
+you watch this stuff, you won't be like OMG!!!
+
+Just telling you...
+
+
+
+
+
+
+
+
+### HALF-TOP-SECRET!
