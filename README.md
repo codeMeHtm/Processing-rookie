@@ -9,3 +9,4 @@ Just telling you...
 ### HALF-TOP-SECRET!
 
 * [Waving Sine](https://codemehtm.github.io/sketch/p5-sketches/waving_sine/)
+> Jonathan Richer dit Laflèche
