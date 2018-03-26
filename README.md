@@ -10,4 +10,5 @@ Just telling you...
 
 * [Waving Sine](https://codemehtm.github.io/sketch/p5-sketches/waving_sine/)
 * [Classic Sine](https://codemehtm.github.io/sketch/p5-sketches/sine/)
+
 > Jonathan Richer dit Laflèche
