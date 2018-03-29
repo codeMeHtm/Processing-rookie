@@ -74,7 +74,6 @@ function draw() {
 		points.shift();
 		points.shift();
 	}
-	console.log(angle);
 	angle += increment;
 	cangle += cincrement;
 	x += xvel;
