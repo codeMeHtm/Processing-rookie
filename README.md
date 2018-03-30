@@ -10,5 +10,6 @@ Just telling you...
 
 * [Waving Sine](https://codemehtm.github.io/sketch/p5-sketches/waving_sine/)
 * [Classic Sine](https://codemehtm.github.io/sketch/p5-sketches/sine/)
+* [2D - 3D Sine Wave](https://codemehtm.github.io/sketch/pure-sketch/)
 
 > Jonathan Richer dit Laflèche
