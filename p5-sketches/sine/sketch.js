@@ -13,8 +13,8 @@ let clicked = false;
 let slider;
 
 function setup() {
-	createCanvas(windowWidth, 400);
-	increment = PI/25;
+	createCanvas(600, 400);
+	increment = PI / 25;
 	const p = createP("Slide it to set the Frame Rate!");
 	slider = createSlider(20, 60, 30, 1);
 	p.style("font-size", "50px");
@@ -23,27 +23,30 @@ function setup() {
 }
 
 function draw() {
-	cincrement = TWO_PI/30;
+	cincrement = TWO_PI / 30;
 	frameRate(slider.value());
-	
+
 	background(0);
 	const circle1 = {
 		x: x,
-		y: height/2 + height/4 + cos(angle) * 25,
+		y: height / 2 + height / 4 + cos(angle) * 25,
 		r: 10
 	};
+
 	const circle2 = {
 		x: x,
-		y: height/2 + height/4 + cos(angle) * -25,
+		y: height / 2 + height / 4 + cos(angle) * -25,
 		r: 10
 	};
+
 	const point1 = {
 		x: x1,
-		y: height/2 + height/4 + sin(cangle) * 20
+		y: height / 2 + height / 4 + sin(cangle) * 20
 	};
+
 	const point2 = {
 		x: x1,
-		y: height/2 + height/4 + sin(cangle) * -20
+		y: height / 2 + height / 4 + sin(cangle) * -20
 	};
 
 	points.push(point1);
@@ -80,7 +83,7 @@ function draw() {
 	x1 += x1vel;
 	if (x >= width - 10) {
 		xvel *= -1;
-		increment = TWO_PI/30;
+		increment = TWO_PI / 30;
 	} else if (x <= 0 + 10) {
 		xvel *= -1;
 		increment = PI / 20;
