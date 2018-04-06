@@ -5,47 +5,6 @@ const sgn = x => {
 	else return 0;
 }
 
-
-class RandomWalker {
-	constructor(p, r) {
-		this.r = r;
-		this.pos = createVector(p.x, p.y);
-		this.vel = createVector(this.r / 2, this.r / 2);
-		this.allowedDirections = [0, 1, 2, 3];
-	}
-
-	show() {
-		this.update();
-		const h = map(this.pos.x, 0, rWidth, 0, 360);
-		stroke(h, 100, random(75, 100));
-		strokeWeight(this.r);
-		return point(this.pos.x, this.pos.y);
-	}
-
-	update() {
-		const dir = this.direction();
-		if (dir == 0) return this.pos.x += this.vel.x;
-		if (dir == 1) return this.pos.y += this.vel.y;
-		if (dir == 2) return this.pos.x -= this.vel.x;
-		if (dir == 3) return this.pos.y -= this.vel.y;
-	}
-
-	direction() {
-		if (
-			this.pos.x > 5 &&
-			this.pos.x < rWidth &&
-			this.pos.y > 5 &&
-			this.pos.y < height - 7
-		) return random(this.allowedDirections);
-
-		if (this.pos.x <= 5) return this.pos.x += this.vel.x;
-		if (this.pos.x >= rWidth) return this.pos.x -= this.vel.x;
-		if (this.pos.y <= 5) return this.pos.y += this.vel.y;
-		if (this.pos.y >= height - 7) return this.pos.y -= this.vel.y
-
-	}
-}
-
 const r = 5;
 const walkers = [];
 const grid = [];
@@ -64,11 +23,18 @@ function setup() {
 
 	background(255);
 	s = createSlider(1, 50, 1, 1);
+	s.style("position", "absolute");
+	s.style("top", width / 2 - 20 + "px");
+	s.style("left", (width - s.width) - 30 + "px");
 	colorMode(HSB);
 	stroke(0);
 	strokeWeight(5);
 	noFill();
 	rect(3, 3, rWidth, height - 7);
+	stroke(0);
+	strokeWeight(5);
+	noFill();
+	rect(0, 0, width, height);
 }
 
 function draw() {
@@ -92,9 +58,9 @@ function draw() {
 		// stroke(0);
 		fill(255);
 		rect(810, 0, 200, height);
-		textSize(32);
+		textSize(30);
 		fill(0);
-		text("Walkers: " + s.value(), 825, 450);
+		text("Walkers: " + s.value(), 815, 450);
 		stroke(0);
 		strokeWeight(5);
 		noFill();
@@ -109,7 +75,10 @@ function draw() {
 	// \ Play \ \ Pause \ circle
 	const d = dist(940, 750, mouseX, mouseY);
 	noStroke();
-	if (d < 25) fill(100);
+	if (d < 25) {
+		fill(100);
+		if (mouseIsPressed) fill(0);
+	}
 	else fill(32);
 	ellipse(940, 750, 50);
 	if (looping) {
@@ -130,12 +99,15 @@ function draw() {
 	// Stop circle
 	noStroke();
 	const d2 = dist(mouseX, mouseY, width - 60, height - 150);
-	if (d2 < 25) fill(100);
+	if (d2 < 25) {
+		fill(100);
+		if (mouseIsPressed) fill(0);
+	}
 	else fill(32);
 	ellipse(940, 650, 50);
 
 	pop();
-	// Replay:
+	// Replay button
 	push();
 	let x, y;
 	translate(940, 650);
@@ -157,15 +129,15 @@ function draw() {
 	pop();
 
 	push();
-	translate(920, 50);
+	translate(900, 50);
 	colorMode(RGB);
 
-	const n = 5;
+	const n = 6;
 	const a = 1;
 	const b = 1;
 	const na = 2 / n;
 
-	// Auto restart button
+	// Title
 	noStroke();
 	fill(32);
 	beginShape();
@@ -177,14 +149,9 @@ function draw() {
 	endShape(CLOSE);
 	noStroke();
 	fill(255, 0, 150);
-	textSize(25);
+	textSize(23);
 	text("Randomness", -73, 10);
 	pop();
-
-
-
-
-
 
 	if (autoRestart) {
 		if (colored.length > 10000) {
@@ -192,6 +159,10 @@ function draw() {
 			for (let i = colored.length; i >= 0; i--) colored.pop();
 		}
 	}
+	stroke(0);
+	strokeWeight(5);
+	noFill();
+	rect(0, 0, width, height);
 }
 
 function mousePressed() {
@@ -218,6 +189,31 @@ function mousePressed() {
 		rect(3, 3, rWidth, height - 7);
 	}
 
-	// console.log(mouseX + " , " + mouseY)
+	console.log(mouseX + " , " + mouseY);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function end() {
+	looping = false;
+
+
+}
+
+
+
+
