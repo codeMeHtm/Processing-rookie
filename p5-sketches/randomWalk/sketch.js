@@ -163,6 +163,8 @@ function draw() {
 	strokeWeight(5);
 	noFill();
 	rect(0, 0, width, height);
+
+
 }
 
 function mousePressed() {
@@ -178,6 +180,7 @@ function mousePressed() {
 	}
 
 	if (d1 < 25) {
+		// end();
 		for (let i = colored.length; i >= 0; i--) colored.pop();
 		for (let i = walkers.length; i >= 0; i--) walkers.pop();
 		looping = false;
@@ -186,31 +189,14 @@ function mousePressed() {
 		stroke(0);
 		strokeWeight(5);
 		noFill();
-		rect(3, 3, rWidth, height - 7);
+    rect(3, 3, rWidth, height - 7);
 	}
 
-	console.log(mouseX + " , " + mouseY);
+	// console.log(mouseX + " , " + mouseY);
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function end() {
-	looping = false;
-
 
 }
 
