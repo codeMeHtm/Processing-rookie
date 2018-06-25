@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+#text {
+  position: fixed;
+  top: 50px;
+  left: 150px;
+}
+
+#label {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+}
+
 .footer {
   font-family: Helvetica, sans-serif;
   height: 100px;
@@ -30,4 +42,3 @@
   color: white;
   transition: background-color 0.2s, color 0.2s;
 }
-

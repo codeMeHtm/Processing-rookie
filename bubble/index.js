@@ -1,4 +1,8 @@
 // Draw some text to the screen:
-drawName('ITP NYU');
+var input = document.getElementById("text");
+input.onchange = function() {
+	drawName(input.value);
+};
+drawName("Unicorn!");
 // Animate the text!
 bounceBubbles();
