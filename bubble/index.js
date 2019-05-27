@@ -3,6 +3,6 @@ var input = document.getElementById("text");
 input.onchange = function() {
 	drawName(input.value);
 };
-drawName("DÉJÀ 9 MOIS QUE JE T'ADORE MON AMOUR! <3 Je t'aime fort");
+drawName("Enter your text in the box above ...");
 // Animate the text!
 bounceBubbles();
