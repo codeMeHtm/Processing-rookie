@@ -3,6 +3,6 @@ var input = document.getElementById("text");
 input.onchange = function() {
 	drawName(input.value);
 };
-drawName("Enter your text in the box above ...");
+drawName("Enter your text ...");
 // Animate the text!
 bounceBubbles();
